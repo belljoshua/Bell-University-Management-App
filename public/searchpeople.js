@@ -1,6 +1,6 @@
-function searchPeopleByFirstName() {
+function searchStudents() {
     //get the first name 
-    var first_name_search_string  = document.getElementById('first_name_search_string').value
+    var student_search  = document.getElementById('student_search').value
     //construct the URL and redirect to it
-    window.location = '/people/search/' + encodeURI(first_name_search_string)
+    window.location = '/student/search/' + encodeURI(student_search)
 }

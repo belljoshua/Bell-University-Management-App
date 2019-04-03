@@ -1,0 +1,51 @@
+<html>
+<a href="http://access.engr.oregonstate.edu:4343/">Home</a>
+
+<h1>Students</h1>
+
+<h2>Search</h2>
+
+<form id="search_students" action="" method="">
+    <input id="student_search" type="text" placeholder="Enter First Name" name="student_search">
+    <input type="button" value="Search" onclick="searchStudents()">
+</form>
+
+<br>
+
+<table style="border: 1px solid black">
+    <thead> 
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">ID</th>
+            <th style="border: 1px solid black">Name</th>
+        </tr>
+    </thead> 
+    <tbody>
+        {{#each student}} 
+        <tr style="border: 1px solid black"> 
+            <td style="border: 1px solid black">{{id}}</td> 
+            <td style="border: 1px solid black">{{name}}</td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table>
+
+<h2>Add student:</h2>
+<form id="addperson" action="/student" method="post">
+    <input type="text" placeholder="student Full Name" name="name">
+    <input type="submit" value="Submit">
+ </form>
+<br/>
+
+<h2>Change Student Name</h2>
+<form id="change_student">
+<select id="student_to_change">
+    {{#each student}}
+    <option value="{{id}}">{{name}}</option>
+    {{/each}}
+</select>
+
+<input type="text" placeholder="New Name" name="name">
+<button onclick="updateStudent()">Change</button>
+</form>
+ 
+</html>

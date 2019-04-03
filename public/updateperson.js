@@ -1,10 +1,11 @@
-function updatePerson(id){
+function updateStudent(){
+    var id = document.getElementById('student_to_change').value
     $.ajax({
-        url: '/people/' + id,
+        url: '/student/' + id,
         type: 'PUT',
-        data: $('#update-person').serialize(),
+        data: $('#change_student').serialize(),
         success: function(result){
-            window.location.replace("./");
+            window.location.reload(true);
         }
     })
 };

@@ -1,0 +1,62 @@
+<html>
+<a href="http://access.engr.oregonstate.edu:4343/">Home</a>
+
+<h1>Classes</h1>
+
+
+<table style="border: 1px solid black">
+    <thead> 
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">ID</th>
+            <th style="border: 1px solid black">Title</th>
+            <th style="border: 1px solid black">Professor</th>
+            <th style="border: 1px solid black">Building</th>
+        </tr>
+    </thead> 
+    <tbody>
+        {{#each class}} 
+        <tr style="border: 1px solid black"> 
+            <td style="border: 1px solid black">{{id}}</td> 
+            <td style="border: 1px solid black">{{title}}</td>
+            <td style="border: 1px solid black">{{prof}}</td>
+            <td style="border: 1px solid black">{{building}}</td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table>
+
+<h2>Add New Class:</h2>
+<form id="addperson" action="/class" method="post">
+    <input type="text" placeholder="Class Title" name="title"> <br>
+    <input type="text" placeholder="Building" name="building"> <br>
+    <input type="text" placeholder="Professor" name="prof"> <br>
+    <input type="submit" value="Submit">
+ </form>
+<br/>
+
+<h2>Enroll Student in Class</h2>
+<a href="/enroll">Click here to enroll a student in a new class</a>
+
+<h2>Classes Students are Taking</h2>
+<a href="/taking">Click here to view the classes of an individual student</a>
+
+		<h2>Withdraw Student from Class</h2>
+
+		<form action='' method=''>
+        Choose Student to Withdraw <select id='student_id' name="sid">
+            {{#each student}}
+            <option value="{{sid}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        Choose Class to Withdraw from <select id="class_id" name="cid">
+            {{#each class}}
+            <option value="{{id}}">{{title}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <input type="button" value="Withdraw" onclick="withdrawStudent()">
+    </form>
+
+ 
+</html>

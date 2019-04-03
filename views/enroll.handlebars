@@ -1,0 +1,24 @@
+<html>
+<a href="http://access.engr.oregonstate.edu:4343/">Home</a> <a href="http://access.engr.oregonstate.edu:4343/class">Back</a>
+
+<h1>Enroll Student</h1>
+
+<h2>Enroll Student in Class</h2>
+
+    <form action="/enroll" method="post">
+        Choose Student to Enroll <select id='student_id' name="sid">
+            {{#each student}}
+            <option value="{{sid}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        Choose Class to Enroll in <select id="class_id" name="cid">
+            {{#each class}}
+            <option value="{{cid}}">{{title}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <input type="submit" value="Enroll">
+    </form>
+ 
+</html>

@@ -1,0 +1,34 @@
+<html>
+<a href="http://access.engr.oregonstate.edu:4343/">Home</a>
+
+<h1>Professors</h1>
+
+<br>
+
+<table style="border: 1px solid black">
+    <thead> 
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">ID</th>
+            <th style="border: 1px solid black">Name</th>
+            <th style="border: 1px solid black">Office Location</th>
+        </tr>
+    </thead> 
+    <tbody>
+        {{#each professor}} 
+        <tr style="border: 1px solid black"> 
+            <td style="border: 1px solid black">{{id}}</td> 
+            <td style="border: 1px solid black">{{name}}</td>
+            <td style="border: 1px solid black">{{building}}</td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table>
+
+<h2>Add Professor:</h2>
+<form id="addperson" action="/professor" method="post">
+    <input type="text" placeholder="Professor Full Name" name="name"> <br>
+    <input type="text" placeholder="Office's Building ID" name="office"> <br>
+    <input type="submit" value="Submit">
+ </form>
+
+</html>

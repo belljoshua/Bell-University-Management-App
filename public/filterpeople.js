@@ -1,6 +1,6 @@
-function filterPeopleByHomeworld() {
-    //get the id of the selected homeworld from the filter dropdown
-    var homeworld_id = document.getElementById('homeworld_filter').value
+function filterClassesByStudent() {
+    //get the id of the selected student from the filter dropdown
+    var student_id = document.getElementById('student_class_filter').value
     //construct the URL and redirect to it
-    window.location = '/people/filter/' + parseInt(homeworld_id)
+    window.location = '/taking/filter/' + parseInt(student_id)
 }

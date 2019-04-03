@@ -1,0 +1,36 @@
+<html>
+
+<a href="http://access.engr.oregonstate.edu:4343/">Home</a> <a href="http://access.engr.oregonstate.edu:4343/class">Back</a>
+
+<h1>Classes Students are Taking</h1>
+
+
+Select a Student
+<br>
+<form id='filter_people' action='' method=''>
+<!--- this form does not submit directly, the button handles all the interaction with backend -->
+    <select id='student_class_filter' name="sid"> 
+        {{#each student}}
+        <option value="{{sid}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    <input type="button" value="Go" onclick="filterClassesByStudent()">
+</form>
+
+
+<table style="border: 1px solid black">
+    <thead> 
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">Classes</th>
+        </tr>
+    </thead> 
+    <tbody>
+        {{#each taking}} 
+        <tr style="border: 1px solid black"> 
+            <td style="border: 1px solid black">{{title}}</td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table>
+ 
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<a href="http://access.engr.oregonstate.edu:4343/">Home</a>
+
+<h1>Buildings</h1>
+
+
+<table style="border: 1px solid black">
+    <thead> 
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">ID</th>
+            <th style="border: 1px solid black">Name</th>
+        </tr>
+    </thead> 
+    <tbody>
+        {{#each building}} 
+        <tr style="border: 1px solid black"> 
+            <td style="border: 1px solid black">{{id}}</td> 
+            <td style="border: 1px solid black">{{name}}</td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table>
+
+<h2>Add Building:</h2>
+<form id="addperson" action="/building" method="post">
+    <input type="text" placeholder="building Name" name="name">
+    <input type="submit" value="Submit">
+ </form>
+
+<h2>Delete Building</h2>
+
+<form action='' method=''>
+    Choose Building to Delete <br>
+    <select id='building_id' name="bid">
+        {{#each building}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select>
+    
+    <input type="button" value="Delete" onclick="deleteBuilding()">
+</form>
+ 
+</html>
